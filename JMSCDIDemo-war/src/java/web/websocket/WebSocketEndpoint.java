@@ -65,7 +65,7 @@ public class WebSocketEndpoint {
         }
     }
 
-    public void onJMSMessage(@Observes @WSJMSMessage Message msg) {
+    public static void onJMSMessage(@Observes @WSJMSMessage Message msg) {
         try {
             for (Session session : sessions) {
                 session.getBasicRemote().sendText("message from JMS: " + msg.getBody(String.class));
