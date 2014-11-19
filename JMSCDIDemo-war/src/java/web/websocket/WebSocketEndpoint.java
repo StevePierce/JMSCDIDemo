@@ -8,16 +8,16 @@ package web.websocket;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.HashSet;
-import java.util.Queue;
 import java.util.Set;
 import javax.annotation.Resource;
+import javax.ejb.Stateless;
 import javax.enterprise.event.Observes;
-import javax.inject.Named;
 import javax.jms.ConnectionFactory;
 import javax.jms.Destination;
 import javax.jms.JMSContext;
 import javax.jms.JMSException;
 import javax.jms.Message;
+import javax.jms.Queue;
 import javax.websocket.OnClose;
 import javax.websocket.OnError;
 import javax.websocket.OnMessage;
@@ -30,7 +30,7 @@ import web.websocket.qualifier.WSJMSMessage;
  *
  * @author spierce
  */
-@Named
+@Stateless
 @ServerEndpoint("/websocket")
 public class WebSocketEndpoint {
 
